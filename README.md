@@ -1,17 +1,23 @@
 # PTT StudyAbroad API
 
+<img src ="https://circleci.com/gh/CryoliteZ/ptt-studyabroad-api.svg"/>
+
 > Having a hard time searching for information about studying CS abroad? 
 
 > Got flamed for not doing enough research before posting on PTT? 
 
 PTT StudyAbroad API provides a way to search for CS related articles with customized results
 
-<p align="center">
-    <em>Find articles that matches your background, your research interest and your target school</em>
-</p>
+Find articles that matches your background, your research interest and your target school
+<!-- <p align="center">
+    <em> Find articles that matches your background, your research interest and your target school</em>
+</p> -->
 
 
-**Documentation**: https://ptt-studyabroad-api.herokuapp.com/docs
+
+
+
+**Documentation**: https://ptt-studyabroad-api.herokuapp.com/docs  
 
 ## Getting Started
 

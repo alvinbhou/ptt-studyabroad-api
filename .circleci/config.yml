@@ -6,7 +6,3 @@ jobs:
      - checkout
      # build the application image
      - run: docker-compose up -d
-<<<<<<< HEAD
-
-=======
->>>>>>> dcf510e... Update default port for Dockefile
