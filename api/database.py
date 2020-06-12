@@ -162,6 +162,7 @@ QUERY_PROGRAM_STR = """
                     5 * ((mean_gpa BETWEEN :gpa - 0.3 AND :gpa - 0.2) OR (mean_gpa BETWEEN :gpa + 0.2 AND :gpa + 0.3))::int + \
                     2 * ((mean_gpa BETWEEN :gpa - 0.5 AND :gpa - 0.3) OR (mean_gpa BETWEEN :gpa + 0.3 AND :gpa + 0.5))::int + \
                     4 * (min_gpa <= 3.01 AND (min_gpa BETWEEN :gpa -0.25 AND :gpa + 0.25) )::int + \
+                    -0.2 * (mean_gpa = -1)::int + \
                     4 * (length(:uni_id) > 0 AND uni_id = :uni_id)::int + \
                     3 * (length(:major_type) > 0 AND (major_id = :major_id OR major_type = :major_type))::int + \
                     1 * (length(:major_id) > 0 AND (major_id = :major_id AND NOT major_type ~ '(CS|EE)'))::int + \

@@ -13,7 +13,7 @@ class Candidate(BaseModel):
         example="MATH",
         title="Major that you study",
         description="Name in English or Chinese are both acceptable. Examples: [CS, IM, CSIE, GINM, Finance, 資工, 網媒, 電信工程學研究所]")
-    gpa: float = Field(None, example=3.7, title="Overall GPA")
+    gpa: float = Field(0, example=3.7, title="Overall GPA")
     target_schools: list = Field([], example=[
         "Stanford",
         "University of California, Berkeley",

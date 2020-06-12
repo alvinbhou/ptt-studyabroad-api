@@ -36,14 +36,14 @@ def parse_request(request, article_type="ADMISSION"):
     target_programs = list(set(target_programs))
 
     # Use GPA 3.6 if GPA not given
-    gpa = request.gpa if request.gpa else 3.6
+    # gpa = request.gpa if request.gpa else 3.6
 
     query_dict = {
         'article_type': article_type,
         'uni_id': university_id,
         'major_id': major_id,
         'major_type': major_type,
-        'gpa': gpa,
+        'gpa': request.gpa,
         'universities': target_schools,
         'programs': target_programs,
         'program_level': request.program_level,
