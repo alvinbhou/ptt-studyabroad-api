@@ -1,6 +1,6 @@
 # PTT StudyAbroad API
 
-<img src ="https://circleci.com/gh/CryoliteZ/ptt-studyabroad-api.svg"/>
+<img src ="https://circleci.com/gh/CryoliteZ/ptt-studyabroad-api.svg?style=svg"/>
 
 > Having a hard time searching for information about studying CS abroad? 
 
