@@ -12,5 +12,5 @@ COPY . /app
 ENV PYTHONPATH=/app
 RUN python ./utils/clean_us_data.py
 
-EXPOSE $PORT
-CMD uvicorn main:app --port $PORT --host 0.0.0.0
+EXPOSE ${PORT:-5000}
+CMD uvicorn main:app --port ${PORT:-5000} --host 0.0.0.0
