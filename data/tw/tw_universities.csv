@@ -1,0 +1,157 @@
+uni_name|uni_id|uni_cname|uni_location|uni_cabbr|ip
+National Taiwan University|NTU|國立臺灣大學|Daan District, Taipei|台大|112
+National Tsing Hua University|NTHU|國立清華大學|East District, Hsinchu|清大|114
+National Chiao Tung University|NCTU|國立交通大學|East District, Hsinchu|交大|113
+National Chengchi University|NCCU|國立政治大學|Wenshan District, Taipei|政大|119
+National Cheng Kung University|NCKU|國立成功大學|East District, Tainan|成大|116
+National Central University|NCU|國立中央大學|Zhongli District, Taoyuan City|中央|115
+National Chi Nan University|NCNU|國立暨南國際大學|Puli Township, Nantou County||
+National Chiayi University|NCYU|國立嘉義大學|Chiayi City|嘉大|
+National Chung Cheng University|CCU|國立中正大學|Minxiong Township, Chiayi County|中正|123
+National Chung Hsing University|NCHU|國立中興大學|South District, Taichung|中興|120
+National Dong Hwa University|NDHU|國立東華大學|Shoufeng Township, Hualien County|東華|
+National Ilan University|NIU|國立宜蘭大學|Yilan City, Yilan County||
+National Pingtung University|NPTU|國立屏東大學|Pingtung City, Pingtung County||
+National Quemoy University|NQU|國立金門大學|Jinning Township, Kinmen||
+National Sun Yat-sen University|NSYSU|國立中山大學|Gushan District, Kaohsiung|中山|117
+National Taipei University|NTPU|國立臺北大學|Sanxia District, New Taipei|北大|
+National Taitung University|NTTU|國立臺東大學|Taitung City, Taitung County||
+National Taiwan Ocean University|NTOU|國立臺灣海洋大學|Zhongzheng District, Keelung|海大|
+National United University|NUU|國立聯合大學|Miaoli City, Miaoli County||
+National University of Tainan|NUTN|國立臺南大學|West Central District, Tainan||
+National Yang-ming University|NYMU|國立陽明大學|Beitou District, Taipei|陽明|
+National University of Kaohsiung|NUK|國立高雄大學|Nanzih District, Kaohsiung||
+University of Taipei|UT_|臺北市立大學|Zhongzheng District, Taipei||
+National Changhua University of Education|NCUE|國立彰化師範大學|Changhua City, Changhua County|彰師大|
+National Kaohsiung Normal University|NKNU|國立高雄師範大學|Lingya District, Kaohsiung|高師大|
+National Taichung University of Education|NTCU|國立臺中教育大學|West District, Taichung||
+National Taipei University of Education|NTUE|國立臺北教育大學|Daan District, Taipei|北教大|
+National Taiwan Normal University|NTNU|國立臺灣師範大學|Daan District, Taipei|師大|
+National Taiwan Sport University|NTSU|國立體育大學|Guishan District, Taoyuan City||
+National Taiwan University of Arts|NTUA|國立臺灣藝術大學|Banqiao District, New Taipei|台藝大|
+National Taiwan University of Physical Education and Sport|NTUPES|國立臺灣體育運動大學|North District, Taichung|台體|
+Tainan National University of the Arts|TNNUA|國立臺南藝術大學|Guantian District, Tainan|南藝大|
+Taipei National University of the Arts|TNUA|國立臺北藝術大學|Beitou District, Taipei|北藝大|
+National Chin-Yi University of Technology|NCUT|國立勤益科技大學|Taiping District, Taichung||
+National Formosa University|NFU|國立虎尾科技大學|Huwei Township, Yunlin County|虎科|
+National Kaohsiung University of Science and Technology|NKUST|國立高雄科技大學|Sanmin District, Kaohsiung||
+National Kaohsiung University of Hospitality and Tourism|NKUHT|國立高雄餐旅大學|Siaogang District, Kaohsiung||
+National Penghu University of Science and Technology|NPU|國立澎湖科技大學|Magong City, Penghu||
+National Pingtung University of Science and Technology|NPUST|國立屏東科技大學|Neipu Township, Pingtung County||
+National Taichung University of Science and Technology|NTCUST|國立臺中科技大學|North District, Taichung||
+National Taipei University of Nursing and Health Science|NTUNHS|國立臺北護理健康大學|Beitou District, Taipei||
+National Taipei University of Technology|NTUT|國立臺北科技大學|Daan District, Taipei|北科大|
+National Taiwan University of Science and Technology|NTUST|國立臺灣科技大學|Daan District, Taipei|台科大|118
+National Yunlin University of Science and Technology|NYUST|國立雲林科技大學|Douliu City, Yunlin County|雲科大|
+National Tainan Junior College of Nursing|NTJCN|國立臺南護理專科學校|West Central District, Tainan||
+National Taipei University of Business|NTUB|國立臺北商業大學|Zhongzheng District, Taipei||
+National Taitung Junior College|NTC|國立臺東專科學校|Taitung City, Taitung County||
+National Taiwan College of Performing Arts|NTCPA|國立臺灣戲曲學院|Neihu District, Taipei||
+National Open University|NOU|國立空中大學|Luzhou District, New Taipei||
+Open University of Kaohsiung|OUK|高雄市立空中大學|Siaogang District, Kaohsiung||
+Aletheia University|AU_|真理大學|Tamsui District, New Taipei|真理|
+Asia University|ASIA|亞洲大學|Wufeng District, Taichung||
+Chang Gung University|CGU|長庚大學|Guishan District, Taoyuan City|長庚|
+Chang Jung Christian University|CJCU|長榮大學|Gueiren District, Tainan||
+Cheng Shiu University|CSU_|正修科技大學|Niaosong District, Kaohsiung|正修科大|
+Chinese Culture University|CCU_|中國文化大學|Shilin District, Taipei||
+China Medical University|CMU_|中國醫藥大學|South District, Taichung||
+Chung Hua University|CHU|中華大學|Xiangshan District, Hsinchu||
+Chung Shan Medical University|CSMU|中山醫學大學|South District, Taichung||
+Chung Yuan Christian University|CYCU|中原大學|Zhongli District, Taoyuan City|中原|
+CTBC Business School|CTBC|中信金融管理學院|Annan District, Tainan||
+Dayeh University|DYU|大葉大學|Dacun Township, Changhua County|大葉|
+Far East University|FEU|遠東科技大學|Sinshih District, Tainan||
+Feng Chia University|FCU|逢甲大學|Xitun District, Taichung|逢甲|
+Fo Guang University|FGU|佛光大學|Jiaoxi Township, Yilan County||
+Fooyin University|FYU|輔英科技大學|Daliao District, Kaohsiung||
+Fu Jen Catholic University|FJU|輔仁大學|Xinzhuang District, New Taipei|輔大|
+Hsing Wu University|HWU|醒吾科技大學|Linkou District, New Taipei|醒吾|
+Hsuan Chuang University|HCU|玄奘大學|Xiangshan District, Hsinchu|玄奘|
+Huafan University|HFU|華梵大學|Shiding District, New Taipei|華梵|
+Hungkuang University|HK_|弘光科技大學|Shalu District, Taichung||
+I-Shou University|ISU_|義守大學|Dashu District, Kaohsiung|義守|
+Kainan University|KNU|開南大學|Luzhu District, Taoyuan City|開南|
+Kaohsiung Medical University|KMU|高雄醫學大學|Sanmin District, Kaohsiung|高醫|
+Kao Yuan University|KYU|高苑科技大學|Lujhu District, Kaohsiung||
+Kun Shan University|KSU|崑山科技大學|Yongkang District, Tainan||
+Ling Tung University|LTU|嶺東科技大學|Nantun District, Taichung||
+Mackay Medical College|MMC|馬偕醫學院|Sanzhi District, New Taipei|馬偕|
+Meiho University|MU_|美和科技大學|Neipu Township, Pingtung County||
+Ming Chuan University|MCU|銘傳大學|Shilin District, Taipei|銘傳|
+MingDao University|MDU|明道大學|Pitou Township, Changhua County|明道|
+Nanhua University|NHU|南華大學|Dalin Township, Chiayi County||
+Overseas Chinese University|OCU|僑光科技大學|Xitun District, Taichung||
+Providence University|PU_|靜宜大學|Shalu District, Taichung|靜宜|
+St. John's University|SJU|聖約翰科技大學|Tamsui District, New Taipei|聖約翰|
+Shih Chien University|USC_|實踐大學|Zhongshan District, Taipei||
+Shih Hsin University|SHU|世新大學|Wenshan District, Taipei|世新|
+Shu-Te University|STU_|樹德科技大學|Yanchao District, Kaohsiung|樹德|
+Soochow University|SCU|東吳大學|Shilin District, Taipei|東吳|
+Taipei Medical University|TMU|臺北醫學大學|Xinyi District, Taipei||
+Taiwan Shoufu University|TSU|台灣首府大學|Madou District, Tainan||
+Tajen University|TAJEN|大仁科技大學|Yanpu Township, Pingtung County||
+Tamkang University|TKU|淡江大學|Tamsui District, New Taipei|淡江|
+Tatung University|TTU|大同大學|Zhongshan District, Taipei|大同|
+Toko University|TOKO|稻江科技暨管理學院|Puzi City, Chiayi County||
+TransWorld University|TWU|環球科技大學|Douliu, Yunlin County||
+Tunghai University|THU|東海大學|Xitun District, Taichung||
+Tungnan University|TNU|東南科技大學|Shenkeng District, New Taipei||
+Tzu Chi University|TCU|慈濟大學|Hualien City, Hualien County|慈濟|
+University of Kang Ning|UKN|康寧大學|Annan District, Tainan||
+Vanung University|VNU|萬能科技大學|Zhongli District, Taoyuan City||
+WuFeng University|WFU|吳鳳科技大學|Minxiong Township, Chiayi County||
+Yuanpei University of Medical Technology|YUMT|元培醫事科技大學|Xiangshan District, Hsinchu||
+Yuan Ze University|YZU|元智大學|Zhongli District, Taoyuan City|元智|
+Central Taiwan University of Science and Technology|CTUST|中臺科技大學|Beitun District, Taichung||
+Chang Gung University of Science and Technology|CGUST|長庚科技大學|Guishan District, Taoyuan City||
+Chaoyang University of Technology|CYUT|朝陽科技大學|Wufeng District, Taichung||
+Chia Nan University of Pharmacy and Science|CHNA|嘉南藥理科技大學|Rende District, Tainan||
+Chien Hsin University of Science and Technology|UCH|健行科技大學|Zhongli District, Taoyuan City||
+Chienkuo Technology University|CTU_|建國科技大學|Changhua City, Changhua County||
+Chihlee University of Technology|CLUT|致理科技大學|Banqiao District, New Taipei||
+China University of Science and Technology|CUST|中華科技大學|Nangang District, Taipei||
+China University of Technology|CUTE|中國科技大學|Wenshan District, Taipei||
+Chung Chou University of Science and Technology|CCUT|中州科技大學|Yuanlin City, Changhua County||
+Chung Hwa University of Medical Technology|HWAI|中華醫事科技大學|Rende District, Tainan||
+Chungyu University of Film and Arts|CIT_|崇右影藝科技大學|Xinyi District, Keelung||
+Hsiuping University of Science and Technology|HUST|修平科技大學|Dali District, Taichung||
+HungKuo Delin University of Technology|HDUT|宏國德霖科技大學|Tucheng District, New Taipei||
+Hwa Hsia University of Technology|HWH|華夏科技大學|Zhonghe District, New Taipei||
+Jinwen University of Science and Technology|JUST|景文科技大學|Xindian District, New Taipei||
+Lunghwa University of Science and Technology|LHU|龍華科技大學|Guishan District, Taoyuan City|龍華科大|
+Ming Chi University of Technology|MCUT|明志科技大學|Taishan District, New Taipei||
+Minghsin University of Science and Technology|MUST|明新科技大學|Xinfeng Township, Hsinchu County||
+Nan Jeon University of Science and Technology|NJTC|南榮科技大學|Yanshuei District, Tainan||
+Nan Kai University of Technology|NKUT|南開科技大學|Caotun Township, Nantou County||
+Southern Taiwan University of Science and Technology|STUST|南臺科技大學|Yongkang District, Tainan||
+Ta Hwa University of Science and Technology|TUST|大華科技大學|Qionglin Township, Hsinchu County||
+Tainan University of Technology|TUT_|臺南應用科技大學|Yongkang District, Tainan||
+Taipei City University of Science and Technology|TPCU|臺北城市科技大學|Beitou District, Taipei||
+Taipei University of Marine Technology|TUMT|台北海洋科技大學|Shilin District, Taipei||
+Taiwan Hospitality and Tourism University|THTU|臺灣觀光學院|Shoufeng Township, Hualien County||
+Takming University of Science and Technology|TMUST|德明財經科技大學|Neihu District, Taipei||
+Tung Fang Design University|TFU|東方設計大學|Hunei District, Kaohsiung||
+Tzu Chi University of Science and Technology|TCUST|慈濟技術學院|Hualien City, Hualien County||
+Wenzao Ursuline University of Languages|WTUC|文藻外語大學|Sanmin District, Kaohsiung|文藻|
+Yu Da University of Science and Technology|YDU|育達科技大學|Zaoqiao Township, Miaoli County|育達|
+Asia-Pacific Institute of Creativity|APIC|亞太創意技術學院|Toufen Township, Miaoli County||
+Ching Kuo Institute of Management and Health|CKIMH|經國管理暨健康學院|Zhongshan District, Keelung||
+Dahan Institute of Technology|DAHAN|大漢技術學院|Xincheng Township, Hualien County||
+Fortune Institute of Technology|FIT_|和春技術學院|Daliao District, Kaohsiung||
+Lan Yang Institute of Technology|FIT_2|蘭陽技術學院|Toucheng Township, Yilan County||
+Lee-Ming Institute of Technology|LIT|黎明技術學院|Taishan District, New Taipei||
+Oriental Institute of Technology|OIT|亞東技術學院|Banqiao District, New Taipei||
+Tatung Institute of Commerce and Technology|TTC|大同技術學院|East District, Chiayi City||
+Tzu Hui Institute of Technology|TZUHUI|慈惠醫護管理專科學校|Nanzhou Township, Pingtung County||
+Air Force Institute of Technology|AFATS|空軍航空技術學院|Gangshan District, Kaohsiung||
+Army Academy R.O.C.|AAROC|陸軍專科學校|Zhongli District, Taoyuan City||
+Central Police University|CPU|中央警察大學|Guishan District, Taoyuan City||
+National Defense Medical Center|NDMC|國防醫學院|Neihu District, Taipei||
+National Defense University|NDU|國防大學|Bade District, Taoyuan City||
+Republic of China Air Force Academy|CAFA|中華民國空軍軍官學校|Gangshan District, Kaohsiung||
+Republic of China Military Academy|ROCMA|中華民國陸軍軍官學校|Fengshan District, Kaohsiung||
+Republic of China Naval Academy|CNA|中華民國海軍軍官學校|Zuoying District, Kaohsiung||
+Taiwan Police College|TPC|臺灣警察專科學校|Wenshan District, Taipei||
+University of Hong Kong|HKU|香港大學|Hong Kong|港大|
+The Chinese University of Hong Kong|CIHK|香港中文大學|Hong Kong||

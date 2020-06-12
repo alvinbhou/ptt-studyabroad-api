@@ -1,0 +1,8 @@
+version: 2
+jobs:
+ build:
+   machine: true
+   steps:
+     - checkout
+     # build the application image
+     - run: docker-compose up -d
