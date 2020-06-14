@@ -40,7 +40,7 @@ class TWBackground(Background):
         # Background keywords
         self.background_keywords = ('background', 'education', '經歷', '學歷', 'academic record')
         self.gpa_keywords = ('GPA', 'Rank', ' Education', 'Background')
-        self.debug_id = 'M.1330716022.A.D49'
+        self.debug_id = None
 
     def find_university(self, content, aid=None):
         def helper(matched_word=None, university_row_index=None, uni_id=None, background_row_idx=None):
@@ -104,8 +104,8 @@ class TWBackground(Background):
         return None, None
 
     def find_major(self, content, university, aid=None):
-        if aid == self.debug_id:
-            print(aid)
+        # if aid == self.debug_id:
+        #     print(aid)
         content = copy.deepcopy(content)
         rows = content.split('\n')
 
@@ -127,11 +127,6 @@ class TWBackground(Background):
 
     def sentence2major(self, sentence, university=None):
         sentence = re.sub(r'(student|TOEFL|GRE)', ' ', sentence, flags=re.IGNORECASE)
-        # Check if major English name in row
-        for name in self.name2mid:
-            if name in sentence:
-                return self.name2mid[name]
-
         # We now determine the start idx we parse from the row!
         # 1) Major is often listed after/before university, check if we are at the same row
         start_idx = 0
@@ -147,13 +142,18 @@ class TWBackground(Background):
         sentence = sentence[start_idx:]
         sentence = re.sub(r'[.,:;/()]', ' ', sentence)
 
+        # Check if major English name in row
+        for name in self.name2mid:
+            if name in sentence:
+                return self.name2mid[name]
+
         for word in sentence.strip().split():
 
             # Exact match of major chinese name
             if word in self.cname2mid:
                 return self.cname2mid[word]
-            # Exact match of major chinese abbreviation
-            elif word in self.cabbr2mid:
+            # Exact match of major chinese abbreviation, exclude false positive '香港中文大學'
+            elif word in self.cabbr2mid and '中文大學' not in word:
                 return self.cabbr2mid[word]
             # Exact match mid, and word != 'BA' (Bachelor's of Art)
             elif word.upper() in self.mid2name and word.upper() != 'BA':
@@ -244,7 +244,6 @@ class USBackground(Background):
         self.useless_reg = r'w\/|w\/o|funding|without|with|stipend|tuition|waived|waive|waiver|fellowship| RA|email|e-mail|year|month|date|interviewed|\
                                 decision|semester|first|for | per| technical|nomination| by | out|\(|\)'
         self.ascii_reg = r'[^\x00-\x7F]+'
-        # self.debug_id = "M.1272871982.A.BF1"
         self.debug_id = None
 
         # Load Universities
@@ -397,7 +396,6 @@ class USBackground(Background):
 
             if article['article_id'] == self.debug_id:
                 print('parsed index', ad_idx, rej_idx, pending_idx)
-                # pp.pprint(rows)
 
             ad_list = []
             end_idx, end_reg = helper_get_end_idx_and_reg(rej_idx, pending_idx)

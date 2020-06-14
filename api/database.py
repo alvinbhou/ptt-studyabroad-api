@@ -160,7 +160,7 @@ QUERY_PROGRAM_STR = """
             FROM(
                 SELECT *,
                     6 * (mean_gpa BETWEEN :gpa -0.2 AND :gpa + 0.2)::int +
-                    5.1 * ((mean_gpa BETWEEN :gpa - 0.3 AND :gpa - 0.21) OR (mean_gpa BETWEEN :gpa + 0.21 AND :gpa + 0.3))::int +
+                    5 * ((mean_gpa BETWEEN :gpa - 0.3 AND :gpa - 0.21) OR (mean_gpa BETWEEN :gpa + 0.21 AND :gpa + 0.3))::int +
                     2 * ((mean_gpa BETWEEN :gpa - 0.5 AND :gpa - 0.31) OR (mean_gpa BETWEEN :gpa + 0.31 AND :gpa + 0.5))::int +
                     4 * (min_gpa <= 3.01 AND (min_gpa BETWEEN :gpa -0.25 AND :gpa + 0.25) )::int +
                     4 * (min_gpa <= 3.01 AND :gpa <= 3.01 AND (min_gpa BETWEEN 0 AND 3.01) )::int +
