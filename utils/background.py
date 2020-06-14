@@ -194,6 +194,9 @@ class TWBackground(Background):
             # aw_idx = row.index('AW') if 'AW' in row else aw_idx
 
             # Parse the float numbers in the current row through regex
+            year_regex = r'[2][0-9]{3}'
+            row = re.sub(year_regex, ' ', row)
+
             float_numbers = re.finditer(r'\d+\.\d+', row)
             # Only search rows that are "GPA_keyword" rows
             if gpa_keyword_in_row is not None or (gpa_keyword_in_row_idx is not None and idx - gpa_keyword_in_row_idx <= 1):
