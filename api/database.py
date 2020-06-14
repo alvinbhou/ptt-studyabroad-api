@@ -123,7 +123,8 @@ def create_tables_and_dump_data():
     # import all modules here that might define models so that
     # they will be registered properly on the metadata.
     try:
-        # Create all tables and views
+        # Clean up the DB then create all tables and views
+        Base.metadata.drop_all(bind=engine)
         Base.metadata.create_all(bind=engine)
 
         # Copy CSV files
