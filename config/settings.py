@@ -27,3 +27,4 @@ class ARTICLE_TYPE(Enum):
 
 
 BUILD_FROM_SCRATCH = False
+BACKEND_CORS_ORIGINS = ["*"]

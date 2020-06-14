@@ -149,28 +149,28 @@ def create_tables_and_dump_data():
 
 
 QUERY_PROGRAM_STR = """
-        SELECT articles.article_id, article_title, author, date, url, uni_id, uni_cname, uni_cabbr, \
-                major_id, major_cname, major_cabbr, major_type, mean_gpa, gpa_scale, \
+        SELECT articles.article_id, article_title, author, date, url, uni_id, uni_cname, uni_cabbr,
+                major_id, major_cname, major_cabbr, major_type, mean_gpa, gpa_scale,
                 universities, programs, program_types, program_levels, score, ABS(mean_gpa - :gpa) AS gpa_diff
 
         FROM articles JOIN
-            (SELECT article_id, array_agg(sub.university) as universities, array_agg(sub.program) as programs,  \
+            (SELECT article_id, array_agg(sub.university) as universities, array_agg(sub.program) as programs,
                      array_agg(sub.program_type) as program_types, array_agg(sub.program_level) as program_levels, MAX(score) as score
             FROM(
-                SELECT *, \
-                    6 * (mean_gpa BETWEEN :gpa -0.2 AND :gpa + 0.2)::int + \
-                    5 * ((mean_gpa BETWEEN :gpa - 0.3 AND :gpa - 0.2) OR (mean_gpa BETWEEN :gpa + 0.2 AND :gpa + 0.3))::int + \
-                    2 * ((mean_gpa BETWEEN :gpa - 0.5 AND :gpa - 0.3) OR (mean_gpa BETWEEN :gpa + 0.3 AND :gpa + 0.5))::int + \
-                    4 * (min_gpa <= 3.01 AND (min_gpa BETWEEN :gpa -0.25 AND :gpa + 0.25) )::int + \
-                    -0.2 * (mean_gpa = -1)::int + \
-                    4 * (length(:uni_id) > 0 AND uni_id = :uni_id)::int + \
-                    3 * (length(:major_type) > 0 AND (major_id = :major_id OR major_type = :major_type))::int + \
-                    1 * (length(:major_id) > 0 AND (major_id = :major_id AND NOT major_type ~ '(CS|EE)'))::int + \
-                    2 * (length(:uni_id) > 0 AND length(:major_id) > 0 AND (uni_id = :uni_id AND major_id = :major_id))::int + \
-                    10 * (program ~ :programs)::int + \
-                    7 * (program_type ~ :program_types)::int + \
-                    10 * (program_level = :program_level AND :program_level = 'PhD')::int + \
-                    15 * (length(:universities) > 0 AND university ~ :universities)::int as score
+                SELECT *,
+                    6 * (mean_gpa BETWEEN :gpa -0.2 AND :gpa + 0.2)::int +
+                    5 * ((mean_gpa BETWEEN :gpa - 0.3 AND :gpa - 0.2) OR (mean_gpa BETWEEN :gpa + 0.2 AND :gpa + 0.3))::int +
+                    2 * ((mean_gpa BETWEEN :gpa - 0.5 AND :gpa - 0.3) OR (mean_gpa BETWEEN :gpa + 0.3 AND :gpa + 0.5))::int +
+                    4 * (min_gpa <= 3.01 AND (min_gpa BETWEEN :gpa -0.25 AND :gpa + 0.25) )::int +
+                    -0.2 * (mean_gpa = -1)::int +
+                    4 * (length(:uni_id) > 0 AND uni_id = :uni_id)::int +
+                    3 * (length(:major_type) > 0 AND (major_id = :major_id OR major_type = :major_type))::int +
+                    1 * (length(:major_id) > 0 AND (major_id = :major_id AND NOT major_type ~ '(CS|EE)'))::int +
+                    2 * (length(:uni_id) > 0 AND length(:major_id) > 0 AND (uni_id = :uni_id AND major_id = :major_id))::int +
+                    10 * (program ~ :programs)::int +
+                    7 * (program_type ~ :program_types)::int +
+                    10 * (program_level = :program_level AND :program_level = 'PhD')::int +
+                    15 * (length(:universities) > 2 AND university ~ :universities)::int as score
                 FROM article_program_view
                 WHERE article_type = :article_type
             ) as sub

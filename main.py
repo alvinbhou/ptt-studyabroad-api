@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Body
+from starlette.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi
 from typing import List
 import os
@@ -7,8 +8,14 @@ from api.models import Candidate, Article, Program
 from api.models import init_programs, init_candidate
 from api.database import query_programs_api
 from api.parser import parse_request
+from config import settings
 
 app = FastAPI()
+if settings.BACKEND_CORS_ORIGINS:
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=[str(origin) for origin in settings.BACKEND_CORS_ORIGINS],
+    )
 
 
 @app.on_event("startup")
