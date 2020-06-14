@@ -40,6 +40,7 @@ class TWBackground(Background):
         # Background keywords
         self.background_keywords = ('background', 'education', '經歷', '學歷', 'academic record')
         self.gpa_keywords = ('GPA', 'Rank', ' Education', 'Background')
+        self.debug_id = 'M.1330716022.A.D49'
 
     def find_university(self, content, aid=None):
         def helper(matched_word=None, university_row_index=None, uni_id=None, background_row_idx=None):
@@ -103,7 +104,7 @@ class TWBackground(Background):
         return None, None
 
     def find_major(self, content, university, aid=None):
-        if aid == 'M.1331452292.A.66A':
+        if aid == self.debug_id:
             print(aid)
         content = copy.deepcopy(content)
         rows = content.split('\n')
@@ -125,7 +126,7 @@ class TWBackground(Background):
         return None
 
     def sentence2major(self, sentence, university=None):
-        sentence = re.sub(r'student', ' ', sentence, flags=re.IGNORECASE)
+        sentence = re.sub(r'(student|TOEFL|GRE)', ' ', sentence, flags=re.IGNORECASE)
         # Check if major English name in row
         for name in self.name2mid:
             if name in sentence:
@@ -154,14 +155,14 @@ class TWBackground(Background):
             # Exact match of major chinese abbreviation
             elif word in self.cabbr2mid:
                 return self.cabbr2mid[word]
-            # Exact match mid
-            elif word.upper() in self.mid2name:
+            # Exact match mid, and word != 'BA' (Bachelor's of Art)
+            elif word.upper() in self.mid2name and word.upper() != 'BA':
                 return word.upper()
             else:
                 # mid in word (e.g. 'EE' in 'NTUEE')
                 rmid = re.findall(r'(' + '|'.join(self.mid2name.keys()) + ')(?!.)', word)
-                # Filter False positive ENT (Entomology)
-                if rmid and (rmid[0] != 'ent' or re.match(r' ent', word)):
+                # Filter False positive ENT (Entomology) and word != 'BA' (Bachelor's of Art)
+                if rmid and (rmid[0] != 'ent' or re.match(r' ent', word)) and rmid[0] != 'BA':
                     return rmid[0].upper()
                 # cabbr in word (e.g. '電機' in '台大電機系')
                 rabbr = re.findall(r'(' + '|'.join(self.cabbr2mid.keys()) + ')', word, re.IGNORECASE)
