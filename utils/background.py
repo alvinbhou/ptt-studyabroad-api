@@ -88,12 +88,12 @@ class TWBackground(Background):
                 return self.ip2uid[word], word
             else:
                 # uid in word (e.g. 'NTU' in 'NTUEE')
-                ruid = re.findall(r'(' + '|'.join(self.uid2cname.keys()) + ')(?!.)', word, flags=re.IGNORECASE)
+                ruid = re.findall(r'(' + '|'.join(self.uid2cname.keys()) + ')(?!.)', word)
                 # Filter False positive Hsinchu -> NCHU
                 if ruid and word != 'Hsinchu':
                     return ruid[0].upper(), word
                 # Chinese abbr. in word (e.g. '台大' in '台大電機')
-                rabbr = re.findall(r'(' + '|'.join(self.cabbr2uid.keys()) + ')', word, flags=re.IGNORECASE)
+                rabbr = re.findall(r'(' + '|'.join(self.cabbr2uid.keys()) + ')', word)
                 if rabbr:
                     return self.cabbr2uid[rabbr[0]], word
         # Check if university English name in row
@@ -103,6 +103,8 @@ class TWBackground(Background):
         return None, None
 
     def find_major(self, content, university, aid=None):
+        if aid == 'M.1331452292.A.66A':
+            print(aid)
         content = copy.deepcopy(content)
         rows = content.split('\n')
 
@@ -157,9 +159,9 @@ class TWBackground(Background):
                 return word.upper()
             else:
                 # mid in word (e.g. 'EE' in 'NTUEE')
-                rmid = re.findall(r'(' + '|'.join(self.mid2name.keys()) + ')(?!.)', word, re.IGNORECASE)
+                rmid = re.findall(r'(' + '|'.join(self.mid2name.keys()) + ')(?!.)', word)
                 # Filter False positive ENT (Entomology)
-                if rmid and (rmid[0] != 'ent' or re.match(r' ent', word, re.IGNORECASE)):
+                if rmid and (rmid[0] != 'ent' or re.match(r' ent', word)):
                     return rmid[0].upper()
                 # cabbr in word (e.g. '電機' in '台大電機系')
                 rabbr = re.findall(r'(' + '|'.join(self.cabbr2mid.keys()) + ')', word, re.IGNORECASE)
