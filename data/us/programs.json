@@ -5,7 +5,7 @@
         "SV-SE", "SE", "Silicon Valley", "MSSE", "MS SE", "MSE", "Software Engineering",
         "MSECE", "MS ECE", "EE", "MSEE", "MS EE", "ECE",
         "MSIS", "MS IS", "MSIM", "MS IM", "MISM", "MSI", "Master of Science in Information", "MIMS",
-        "HCI", "MHCI", "MS in HCI", "HCDE", "CGT", "UX",
+        "HCI", "MHCI", "MS in HCI", "HCDE", "CGT", "UX", "Human-Centered Design and Engineering", "Human-Computer Interaction",
         "MSCV", "CV", "Computer Vision",
         "MSML", "MCDS", "MSR", "MITS", "MET", "ETC", "MSIT", "MSIT-SE", "MSIT-ESE", "METALS",
         "MIIS", "MSIN", "MSIT-MOB", "MSIT-Mob", "LTI", "RI", "MS in Machine Learning",
@@ -20,7 +20,7 @@
         "SV-SE", "SE", "Silicon Valley", "MSSE", "MS SE", "MSE", "Software Engineering",
         "MSECE", "MS ECE", "MSEE", "MS EE",
         "MSIS", "MS IS", "MSIM", "MS IM", "MISM", "MSI", "Master of Science in Information",
-        "HCI", "MHCI", "MS in HCI", "HCDE",
+        "HCI", "MHCI", "MS in HCI", "HCDE", "Human-Centered Design and Engineering",
         "MSML", "MCDS", "MSR", "MSCV", "MITS", "MET", "ETC", "MSIT", "MSIT-SE", "MSIT-ESE",
         "MIIS", "MSIN", "MSIS", "MSIT-MOB", "MSIT-Mob", "MS in Machine Learning",
         "MRSD", "Information System", "Information Management",
@@ -46,7 +46,7 @@
             "MSIS", "MS IS", "MSIM", "MS IM", "MISM", "MIMS", "MSI", "Master of Science in Information", "Information System", "Information Management"
         ],
         "HCI": [
-            "HCI", "MHCI", "MS in HCI", "HCDE", "CGT", "UX"
+            "HCI", "MHCI", "MS in HCI", "HCDE", "CGT", "UX", "Human-Centered Design and Engineering", "Human-Computer Interaction"
         ]
 
 

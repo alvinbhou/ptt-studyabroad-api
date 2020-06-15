@@ -88,7 +88,8 @@ class Programs:
                                                       'Information Management') else program_name
             program_name = 'MSIM' if program_name in ('Information Management') else program_name
         elif program_type == 'HCI':
-            program_name = 'MHCI' if program_type in ('HCI', 'MS in HCI') else program_name
+            program_name = 'MHCI' if program_type in ('HCI', 'MS in HCI', 'Human-Computer Interaction') else program_name
+            program_name = 'MCDE' if program_name == 'Human-Centered Design and Engineering' else program_name
         elif program_type == 'EE':
             if program_level == 'MS':
                 program_name = 'MSEE' if program_name not in ('MSECE', 'MS ECE') else 'MS ECE'

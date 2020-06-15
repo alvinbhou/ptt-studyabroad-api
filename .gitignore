@@ -1,6 +1,7 @@
 # data files
 raw_data/*
 output/*
+img/*
 
 
 # Byte-compiled / optimized / DLL files

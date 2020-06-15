@@ -1,21 +1,30 @@
 # PTT StudyAbroad API
 
-<img src ="https://circleci.com/gh/CryoliteZ/ptt-studyabroad-api.svg?style=svg"/>
+<a href="https://cryolite.me/studyabroad/"><img src ="https://circleci.com/gh/CryoliteZ/ptt-studyabroad-api.svg?style=svg"/> </a>
+
+<p align="center">
+  <a href="https://cryolite.me/studyabroad/"><img src="https://i.imgur.com/5UxAABV.png" alt="ptt-studyabroad-api"/></a>
+</p>
+
+<p align="center">
+    <em> Find articles that matches your background, your research interest and your target school</em>
+</p>
+
+
 
 > Having a hard time searching for information about studying CS abroad? 
 
 > Got flamed for not doing enough research before posting on PTT? 
 
-PTT StudyAbroad API provides a way to search for CS related articles with customized results
-
-Find articles that match your **background**, **research interest** and **target school**
-<!-- <p align="center">
-    <em> Find articles that matches your background, your research interest and your target school</em>
-</p> -->
+PTT StudyAbroad API provides a way to search for CS related articles with customized results that matches your background
 
 
+<p align="center">
+  <a href="https://cryolite.me/studyabroad/"><img src="https://i.imgur.com/pN9vsDB.png" alt="ptt-studyabroad-api"/></a>
+</p>
 
 
+### **Website**: https://cryolite.me/studyabroad/
 
 **Documentation**: https://ptt-studyabroad-api.herokuapp.com/docs  
 
@@ -127,7 +136,7 @@ API Playground           |  Example Response
 
 #### Response
 
-The response JSON should be pretty self-explanatory. The `score` indicates how well the artilce matches your query, the higher the better. The detailed API schemas is also documentaed [here](https://ptt-studyabroad-api.herokuapp.com/docs#/admission/list_programs_admission_post). 
+The response JSON should be pretty self-explanatory. The `score` indicates how well the article matches your query, the higher the better. The detailed API schemas is also documented [here](https://ptt-studyabroad-api.herokuapp.com/docs#/admission/list_programs_admission_post). 
 
 
 #### Example curl request
@@ -151,7 +160,7 @@ All the deployment is done in one line. Visit `localhost:5000` to see the result
 docker-compose up -d
 ```
 
-If you would like to build and parse all the articles from scratch, set `BUILD_FROM_SCRATCH` to `True` in the `settings.py` file. The build takes around a minute.
+If you would like to build and parse all the articles from scratch, set `BUILD_FROM_SCRATCH` to `True` in the `settings.py` file. Building from scratch takes around a minute.
 
 
 ### Deploy on Heroku
