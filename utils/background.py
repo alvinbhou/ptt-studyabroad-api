@@ -40,7 +40,7 @@ class TWBackground(Background):
         # Background keywords
         self.background_keywords = ('background', 'education', '經歷', '學歷', 'academic record')
         self.gpa_keywords = ('GPA', 'Rank', ' Education', 'Background')
-        self.debug_id = None
+        self.debug_id = 'M.1524301411.A.52E'
 
     def find_university(self, content, aid=None):
         def helper(matched_word=None, university_row_index=None, uni_id=None, background_row_idx=None):
@@ -104,8 +104,8 @@ class TWBackground(Background):
         return None, None
 
     def find_major(self, content, university, aid=None):
-        # if aid == self.debug_id:
-        #     print(aid)
+        if aid == self.debug_id:
+            print(aid)
         content = copy.deepcopy(content)
         rows = content.split('\n')
 
@@ -166,7 +166,7 @@ class TWBackground(Background):
                     return rmid[0].upper()
                 # cabbr in word (e.g. '電機' in '台大電機系')
                 rabbr = re.findall(r'(' + '|'.join(self.cabbr2mid.keys()) + ')', word, re.IGNORECASE)
-                if rabbr:
+                if rabbr and '中文大學' not in word:
                     return self.cabbr2mid[rabbr[0]]
         return None
 
