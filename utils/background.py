@@ -242,7 +242,7 @@ class USBackground(Background):
         self.rej_reg = r'(reject|rejection|rejection:|rej|rej:|拒絕|打槍)'
         self.pending_reg = r'(pending|waitlist|wl |wl:|無聲|無消息)'
         self.useless_reg = r'w\/|w\/o|funding|without|with|stipend|tuition|waived|waive|waiver|fellowship| RA|email|e-mail|year|month|date|interviewed|\
-                                decision|semester|first|for | per| technical|nomination| by | out|\(|\)'
+                                decision|semester|first|for | per| technical|nomination| by | out|\(|\)|Research|Interest|Area|Field|Politics'
         self.ascii_reg = r'[^\x00-\x7F]+'
         self.debug_id = None
 
