@@ -158,6 +158,11 @@ class DataModel:
         for idx, article in enumerate(self.all_articles[indices]):
             article['admission_info'] = result[idx]
 
+    def clean_up_articles(self):
+        # Remove `content` for all articles
+        for article in self.all_articles:
+            article.pop('content', None)
+
     def get_articles(self, type=ARTICLE_TYPE.ALL):
         if type == ARTICLE_TYPE.ALL:
             return self.all_articles
@@ -277,12 +282,16 @@ class DataModel:
         if parse_admissions:
             self.parse_university_major_gpa()
             self.parse_admission_programs()
+            self.clean_up_articles()
             self.save_classified_articles()
         else:
             self.load_all_articles()
         self.dump_articles_to_csv()
+
         # Create Tables and Dump to postgres DB
         create_tables_and_dump_data()
+
+        # Release memory
         self.all_articles = None
         gc.collect()
         print('Data Model initialization finished!')

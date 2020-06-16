@@ -37,7 +37,7 @@ class ARTICLES(Base):
     article_id = Column(String(25), primary_key=True)
     article_title = Column(String(80))
     author = Column(String(80))
-    content = Column(Text())
+    # content = Column(Text())
     date = Column(DateTime())
     url = Column(String(80))
     article_type = Column(String(15))
@@ -78,7 +78,7 @@ class ADMISSION_UNI_PROGRAMS(Base):
 # VIEW_COLUMNS (SELECT * for VIEW is not working with sqlalchemy_utils... don't have time to fix it now)
 ARTICLES_COLUMNS = [
     ARTICLES.article_id, ARTICLES.article_title, ARTICLES.author,
-    ARTICLES.content, ARTICLES.date, ARTICLES.url,
+    ARTICLES.date, ARTICLES.url,
     ARTICLES.article_type, ARTICLES.uni_id, ARTICLES.uni_name, ARTICLES.uni_cname,
     ARTICLES.uni_location, ARTICLES.uni_cabbr, ARTICLES.major_id, ARTICLES.major_cname,
     ARTICLES.major_name, ARTICLES.major_cabbr, ARTICLES.major_type, ARTICLES.max_gpa,
@@ -179,13 +179,14 @@ QUERY_PROGRAM_STR = """
                 FROM article_program_view
                 WHERE article_type = :article_type
             ) as sub
-            WHERE score >= 0
             GROUP BY article_id) as x ON x.article_id = articles.article_id
+            WHERE (length(:program_types) = 2 OR program_types && ARRAY[:program_type_arr]::varchar[])
         ORDER BY score DESC, gpa_diff ASC, date DESC;
     """
 
 
 def query_programs_api(candidate):
+    candidate['program_type_arr'] = candidate['program_types']
     columns = ['universities', 'programs', 'program_types']
     for col in columns:
         if candidate[col]:

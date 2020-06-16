@@ -83,10 +83,9 @@ class Programs:
             program_name = 'MSSE' if program_name in ('MSE', 'SiliconValley', 'SV-SE', 'SE', 'SoftwareEngineering') else program_name
         elif program_type == 'IS':
             program_name = program_name.replace(' ', '')
-            program_name = 'MSIS' if program_name in ('Master of Science in Information',
-                                                      'Information System',
-                                                      'Information Management') else program_name
-            program_name = 'MSIM' if program_name in ('Information Management') else program_name
+            program_name = 'MSIS' if program_name in ('MasterofScienceinInformation',
+                                                      'InformationSystem') else program_name
+            program_name = 'MSIM' if program_name in ('InformationManagement') else program_name
         elif program_type == 'HCI':
             program_name = 'MHCI' if program_type in ('HCI', 'MS in HCI', 'Human-Computer Interaction') else program_name
             program_name = 'MCDE' if program_name == 'Human-Centered Design and Engineering' else program_name
