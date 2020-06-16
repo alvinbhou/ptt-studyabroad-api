@@ -179,7 +179,7 @@ QUERY_PROGRAM_STR = """
                 FROM article_program_view
                 WHERE article_type = :article_type
             ) as sub
-            WHERE score >= 4
+            WHERE score >= 0
             GROUP BY article_id) as x ON x.article_id = articles.article_id
         ORDER BY score DESC, gpa_diff ASC, date DESC;
     """
