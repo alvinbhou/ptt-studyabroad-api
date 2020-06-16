@@ -40,7 +40,7 @@ class TWBackground(Background):
         # Background keywords
         self.background_keywords = ('background', 'education', '經歷', '學歷', 'academic record')
         self.gpa_keywords = ('GPA', 'Rank', ' Education', 'Background')
-        self.debug_id = 'M.1524301411.A.52E'
+        self.debug_id = None
 
     def find_university(self, content, aid=None):
         def helper(matched_word=None, university_row_index=None, uni_id=None, background_row_idx=None):

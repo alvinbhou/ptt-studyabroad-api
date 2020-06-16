@@ -248,16 +248,21 @@ class DataModel:
             writer = csv.writer(csvfile, delimiter='|')
             writer.writerow(['article_id', 'university', 'program_level', 'program', 'program_type'])
             for article in self.all_articles[self.admission_article_indices]:
+                uni_program_set = set()
                 if 'admission_info' in article:
                     for pair in article['admission_info']['program_uni_pairs']:
                         university, program_level, program_name = pair['university'], pair['program_level'], pair['program_name']
-                        writer.writerow([
-                            article['article_id'],
-                            university,
-                            program_level,
-                            self.programs.normalize_program_name(program_level, program_name),
-                            self.programs.program2type[program_name] if program_name else 'N/A'
-                        ])
+                        program_name_norm = self.programs.normalize_program_name(program_level, program_name)
+                        k = university + '@' + program_name_norm if program_name_norm else university + '@'
+                        if k not in uni_program_set:
+                            uni_program_set.add(k)
+                            writer.writerow([
+                                article['article_id'],
+                                university,
+                                program_level,
+                                program_name_norm,
+                                self.programs.program2type[program_name] if program_name else 'N/A'
+                            ])
 
     def run_data_pipeline(self, parse_admissions=False):
         """Run the whole data preprocess pipeline

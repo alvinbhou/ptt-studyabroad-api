@@ -111,5 +111,5 @@ class Programs:
             else:
                 program_name = 'MSIT-MOB' if program_name == 'MSIT-Mob' else program_name
                 program_name = 'MSML' if program_name == 'MS in Machine Learning' else program_name
-
+                program_name = 'MSDS' if program_name == 'MS DS' else program_name
         return program_name
