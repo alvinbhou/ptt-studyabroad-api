@@ -31,16 +31,20 @@ def read_root():
 
 @app.post("/admission", response_model=List[Article], tags=['admission'])
 def list_programs(student: Candidate) -> List[Article]:
-    query_dict = parse_request(student, article_type="ADMISSION")
-    articles = query_programs_api(query_dict)
     result = []
-    max_score = articles[0].score if articles else 0
-    for idx, article in enumerate(articles):
-        if len(articles) > 100 and article.score < max_score // 2:
-            break
-        programs = init_programs(article)
-        result.append(init_candidate(article, programs))
-    print(query_dict, len(articles), len(result))
+    try:
+        query_dict = parse_request(student, article_type="ADMISSION")
+        articles = query_programs_api(query_dict)
+        max_score = articles[0].score if articles and articles[0].score else 0
+        for idx, article in enumerate(articles):
+            if len(articles) > 100 and article.score < max_score // 2:
+                break
+            programs = init_programs(article)
+            result.append(init_candidate(article, programs))
+        print(query_dict, len(articles), len(result))
+    except Exception as error:
+        print(error)
+
     return result
 
 
