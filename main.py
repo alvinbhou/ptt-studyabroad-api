@@ -35,7 +35,7 @@ def list_programs(student: Candidate) -> List[Article]:
     try:
         query_dict = parse_request(student, article_type="ADMISSION")
         articles = query_programs_api(query_dict)
-        max_score = articles[0].score if articles and article[0].score else 0
+        max_score = articles[0].score if articles and articles[0].score else 0
         for idx, article in enumerate(articles):
             if len(articles) > 100 and article.score < max_score // 2:
                 break
