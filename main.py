@@ -6,7 +6,7 @@ import os
 import collections
 from api.models import Candidate, Article, Program
 from api.models import init_programs, init_candidate
-from api.database import query_programs_api
+from api.database import query_similar_background_api, query_target_school_api
 from api.parser import parse_request
 from config import settings
 
@@ -34,7 +34,7 @@ def list_programs(student: Candidate) -> List[Article]:
     result = []
     try:
         query_dict = parse_request(student, article_type="ADMISSION")
-        articles = query_programs_api(query_dict)
+        articles = query_similar_background_api(query_dict)
         max_score = articles[0].score if articles and articles[0].score else 0
         for idx, article in enumerate(articles):
             if len(articles) > 100 and article.score < max_score // 2:
@@ -44,7 +44,24 @@ def list_programs(student: Candidate) -> List[Article]:
         print(query_dict, len(articles), len(result))
     except Exception as error:
         print(error)
+    return result
 
+
+@app.post("/school", response_model=List[Article], tags=['school'])
+def list_target_school_info(student: Candidate) -> List[Article]:
+    result = []
+    try:
+        query_dict = parse_request(student, article_type="ADMISSION")
+        articles = query_target_school_api(query_dict)
+        max_score = articles[0].score if articles and articles[0].score else 0
+        for idx, article in enumerate(articles):
+            if len(articles) > 100 and article.score != max_score:
+                break
+            programs = init_programs(article)
+            result.append(init_candidate(article, programs))
+        print(query_dict, len(articles), len(result))
+    except Exception as error:
+        print(error)
     return result
 
 
@@ -60,6 +77,7 @@ def custom_openapi():
     )
     openapi_schema['tags'] = [
         {"name": "admission", "description": "Get a list of admission articles with similar background information"},
+        {"name": "school", "description": "Get a list of admission articles for a target school program"},
     ]
     app.openapi_schema = openapi_schema
     return app.openapi_schema

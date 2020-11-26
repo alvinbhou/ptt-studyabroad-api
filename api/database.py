@@ -149,7 +149,7 @@ def create_tables_and_dump_data():
         print(error)
 
 
-QUERY_PROGRAM_STR = """
+QUERY_SIMILAR_BACKGROUND_PROGRAM_STR = """
         SELECT articles.article_id, article_title, author, date, url, uni_id, uni_cname, uni_cabbr,
                 major_id, major_cname, major_cabbr, major_type, mean_gpa, gpa_scale,
                 universities, programs, program_types, program_levels, score, ABS(mean_gpa - :gpa) AS gpa_diff
@@ -184,15 +184,49 @@ QUERY_PROGRAM_STR = """
         ORDER BY score DESC, gpa_diff ASC, date DESC;
     """
 
+QUERY_TARGET_SCHOOL_STR = """
+        SELECT articles.article_id, article_title, author, date, url, uni_id, uni_cname, uni_cabbr,
+                major_id, major_cname, major_cabbr, major_type, mean_gpa, gpa_scale,
+                universities, programs, program_types, program_levels, score
 
-def query_programs_api(candidate):
+        FROM articles JOIN
+            (SELECT article_id, array_agg(sub.university) as universities, array_agg(sub.program) as programs,
+                     array_agg(sub.program_type) as program_types, array_agg(sub.program_level) as program_levels, MAX(score) as score
+            FROM(
+                SELECT *,
+                    50 * (program ~ :programs)::int +
+                    1 * (program_type ~ :program_types)::int +
+                    1 * (program_level = :program_level AND :program_level = 'PhD')::int +
+                    48 * (length(:universities) > 2 AND university ~ :universities)::int as score
+                FROM article_program_view
+                WHERE article_type = :article_type
+            ) as sub
+            GROUP BY article_id) as x ON x.article_id = articles.article_id
+            WHERE (length(:program_types) = 2 OR program_types && ARRAY[:program_type_arr]::varchar[])
+       ORDER BY score DESC, date DESC;
+    """
+
+
+def query_similar_background_api(candidate):
     candidate['program_type_arr'] = candidate['program_types']
     columns = ['universities', 'programs', 'program_types']
     for col in columns:
         if candidate[col]:
             likestring = '(' + '|'.join(candidate[col]) + ')'
             candidate[col] = likestring
-    articles = session.execute(QUERY_PROGRAM_STR, candidate)
+    articles = session.execute(QUERY_SIMILAR_BACKGROUND_PROGRAM_STR, candidate)
+    session.commit()
+    return list(articles)
+
+
+def query_target_school_api(candidate):
+    candidate['program_type_arr'] = candidate['program_types']
+    columns = ['universities', 'programs', 'program_types']
+    for col in columns:
+        if candidate[col]:
+            likestring = '(' + '|'.join(candidate[col]) + ')'
+            candidate[col] = likestring
+    articles = session.execute(QUERY_TARGET_SCHOOL_STR, candidate)
     session.commit()
     return list(articles)
 
