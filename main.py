@@ -48,7 +48,7 @@ def list_programs(student: Candidate) -> List[Article]:
     return result
 
 
-def custom_openapi(openapi_prefix: str = ''):
+def custom_openapi():
     if app.openapi_schema:
         return app.openapi_schema
 
@@ -57,7 +57,6 @@ def custom_openapi(openapi_prefix: str = ''):
         version="0.1.0",
         description="List of APIs to search CS related articles on PTT StudyAbroad board",
         routes=app.routes,
-        openapi_prefix=openapi_prefix
     )
     openapi_schema['tags'] = [
         {"name": "admission", "description": "Get a list of admission articles with similar background information"},
