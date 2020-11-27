@@ -4,7 +4,12 @@ from utils.data import DataModel
 from api.models import Candidate, Article, Program
 
 # Initialization of the DataModel when the parser is imported
-dm = DataModel.from_processed_data(os.path.join(DATA_DIR, 'studyabroad.json'))
+if BUILD_FROM_SCRATCH:
+    dm = DataModel()
+    dm.load_and_clean_ptt_data(os.path.join(DATA_DIR, 'studyabroad.json'), save_path=os.path.join(DATA_DIR, 'studyabroad.json'))
+else:
+    dm = DataModel.from_processed_data(os.path.join(DATA_DIR, 'studyabroad.json'))
+
 dm.run_data_pipeline(parse_admissions=BUILD_FROM_SCRATCH)
 
 

@@ -15,6 +15,7 @@ from datetime import datetime
 from utils.background import TWBackground, USBackground
 from utils.programs import Programs
 from api.database import create_tables_and_dump_data
+import dateutil.parser
 
 pp = pprint.PrettyPrinter()
 
@@ -55,26 +56,26 @@ class DataModel:
         for article in self.all_articles['articles']:
             if 'article_id' in article and article['article_id'] in article_id_set:
                 article['error'] = 'duplicate_id'
-            if 'ip' in article:
-                del article['ip']
-            if 'message_count' in article:
-                del article['message_count']
-            if 'messages' in article:
-                del article['messages']
-            if 'board' in article:
-                del article['board']
+
+            for key in ('ip', 'message_count', 'messages', 'board'):
+                if key in article:
+                    del article[key]
             try:
-                article['date'] = datetime.strptime(article['date'], '%a %b %d %H:%M:%S %Y').strftime("%Y-%m-%d %H:%M:%S")
+                article['date'] = dateutil.parser.parse(article['date']).strftime("%Y-%m-%d %H:%M:%S")
             except (ValueError, KeyError) as e:
                 article['date'] = datetime(1970, 1, 1).strftime("%Y-%b-%d %H:%M:%S")
 
             if 'article_id' in article:
                 article_id_set.add(article['article_id'])
+
+        # Update all_articles
         self.all_articles['articles'] = [article for article in self.all_articles['articles'] if 'error' not in article]
+
         # Save data
         if save_path:
             with open(save_path, 'w', encoding='utf-8') as f:
                 json.dump(self.all_articles, f, ensure_ascii=False)
+
         # We only need the articles array
         self.all_articles = np.array(self.all_articles['articles'])
 
@@ -192,7 +193,7 @@ class DataModel:
 
     def dump_articles_to_csv(self):
         # Additional info
-        additional_info = ['major_info', 'gpa_info', 'admission_info']
+        additional_info = ['major_info', 'gpa_info', 'admission_info', 'university_info']
 
         # Gather column names for general header
         general_keys = [k for k in self.all_articles[self.cs_article_indices][-1].keys() if k not in additional_info]
@@ -296,11 +297,11 @@ class DataModel:
         gc.collect()
         print('Data Model initialization finished!')
 
-    @staticmethod
+    @ staticmethod
     def get_article_titles(articles):
         return [article['article_title'] for article in articles]
 
-    @staticmethod
+    @ staticmethod
     def get_occurrence_count(keywords, target_string):
         target_string = target_string.lower()
         return sum(map(lambda x: target_string.count(x.lower()), keywords))
