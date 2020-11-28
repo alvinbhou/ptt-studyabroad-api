@@ -14,11 +14,12 @@ dm.run_data_pipeline(parse_admissions=BUILD_FROM_SCRATCH)
 
 
 def parse_request(request, article_type="ADMISSION"):
+    print('Request:', request)
     # Normalize the university
     university_id = dm.tw_background.sentence2university(request.university)[0] if request.university else ''
 
     # Normalize the major
-    major_id = dm.tw_background.sentence2major(request.major) if request.major else ''
+    major_id = dm.tw_background.sentence2major(request.major, from_api=True) if request.major else ''
     major_type = dm.tw_background.mid2mtype[major_id] if major_id else ''
 
     # Normalize the target schools

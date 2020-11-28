@@ -165,11 +165,11 @@ QUERY_SIMILAR_BACKGROUND_PROGRAM_STR = """
                     4 * (min_gpa <= 3.01 AND (min_gpa BETWEEN :gpa -0.25 AND :gpa + 0.25) )::int +
                     4 * (min_gpa <= 3.01 AND :gpa <= 3.01 AND (min_gpa BETWEEN 0 AND 3.01) )::int +
                     -0.2 * (mean_gpa = -1)::int +
-                    4 * (length(:uni_id) > 0 AND uni_id = :uni_id)::int +
-                    10 * (length(:uni_id) > 0 AND uni_id = :uni_id AND NOT uni_id ~ '(NTU|NCTU|NTHU)')::int +
-                    6 * (length(:uni_id) > 0 AND uni_id = :uni_id AND NOT uni_id ~ '(NCCU|NCKU)')::int +
+                    8 * (length(:uni_id) > 0 AND uni_id = :uni_id)::int +
+                    20 * (length(:uni_id) > 0 AND uni_id = :uni_id AND NOT uni_id ~ '(NTU|NCTU|NTHU)')::int +
                     3 * (length(:major_type) > 0 AND (major_id = :major_id OR major_type = :major_type))::int +
-                    1 * (length(:major_id) > 0 AND (major_id = :major_id AND NOT major_type ~ '(CS|EE)'))::int +
+                    1 * (length(:major_id) > 0 AND (uni_id <> :uni_id AND major_id = :major_id AND NOT major_type ~ '(CS|EE)'))::int +
+                    5 * (length(:major_id) > 0 AND (uni_id = :uni_id AND major_id = :major_id AND NOT major_type ~ '(CS|EE)'))::int +
                     2 * (length(:uni_id) > 0 AND length(:major_id) > 0 AND (uni_id = :uni_id AND major_id = :major_id))::int +
                     6 * (program ~ :programs)::int +
                     4 * (program ~ :programs AND NOT program ~ '(CS|MSCS|EE|MSEE)')::int +

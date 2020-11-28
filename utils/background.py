@@ -125,7 +125,7 @@ class TWBackground(Background):
                 return major
         return None
 
-    def sentence2major(self, sentence, university=None):
+    def sentence2major(self, sentence, university=None, from_api=False):
         sentence = re.sub(r'(student|TOEFL|GRE)', ' ', sentence, flags=re.IGNORECASE)
         # We now determine the start idx we parse from the row!
         # 1) Major is often listed after/before university, check if we are at the same row
@@ -168,6 +168,9 @@ class TWBackground(Background):
                 rabbr = re.findall(r'(' + '|'.join(self.cabbr2mid.keys()) + ')', word, re.IGNORECASE)
                 if rabbr and '中文大學' not in word:
                     return self.cabbr2mid[rabbr[0]]
+        # Another corner case where the major id is BA from the API request
+        if from_api and sentence == 'BA':
+            return 'BA'
         return None
 
     def find_gpa(self, content, university, aid=None):
