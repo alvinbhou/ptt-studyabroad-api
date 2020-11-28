@@ -46,9 +46,9 @@ def parse_request(request, article_type="ADMISSION"):
 
     query_dict = {
         'article_type': article_type,
-        'uni_id': university_id,
-        'major_id': major_id,
-        'major_type': major_type,
+        'uni_id': university_id if university_id else '',
+        'major_id': major_id if major_id else '',
+        'major_type': major_type if major_type else '',
         'gpa': request.gpa,
         'universities': target_schools,
         'programs': target_programs,
