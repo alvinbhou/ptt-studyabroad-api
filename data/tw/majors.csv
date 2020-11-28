@@ -11,7 +11,9 @@ GICE,電信工程學研究所,Communication Engineering,電信,EE
 GIEE,電子工程學研究所,Electronics Engineering,電子,EE
 EEE,電子工程學研究所,Electronic Engineering,電子,EE
 IM,資訊管理學系,Information Management,資管,IM
+MIS,資訊管理學系,Information Management,資管,IM
 OE,光電工程學研究所,Photonics and Optoelectronics,光電,EE
+STAT,統計系,Statistics,統計,STAT
 MATH,數學系,Mathematics,數學,MATH
 PHYS,物理學系,Physics,物理,PHYS
 CHIN,中國文學系,Chinese Literature,中文,CHIN
@@ -81,7 +83,7 @@ AC,農業化學系,Agricultural Chemistry,農化,AC
 FOREST,森林環境暨資源學系,Forestry and Resource Conservation,森林,FOREST
 ANISCI,動物科學技術學系,Animal Science and Technology,動科,ANISCI
 AGEC,農業經濟學系,Agricultural Economics,農經,AGEC
-HORT,園藝學系,Horticultural Science,園藝系,HORT
+HORT,園藝學系,Horticultural Science,園藝,HORT
 VM,獸醫學系,Veterinary Medicine,獸醫,VM
 BICD,生物產業傳播暨發展學系,Bio-Industry Communication and Development,生傳,BICD
 BME,生物產業機電工程學系,Bio-industrial Mechatronics Engineering,生機,BME
@@ -91,8 +93,10 @@ FOOD,食品科技研究所,Food Science and Technology,食科所,FOOD
 BIOT,生物科技研究所,Biotechnology,生科所,BIOT
 VCS,臨床動物醫學研究所,Veterinary Clinical Sciences,臨床動物,VCS
 BA,工商管理學系,Business Administration,工管,BA
+BA2,企業管理學系,Business Management,企管,BA
 ACC,會計學系,Accounting,會計,ACC
 FIN,財務金融學系,Finance,財金,FIN
+BANKING,金融學系,Money and Banking,金融,BANKING
 IB,國際企業學系,International Business,國企,IB
 PH,公共衛生學系,Public Health,公衛,PH
 OMIH,職業醫學與工業衛生研究所,Occupational Medicine and Industrial Hygiene,職衛所,OMIH

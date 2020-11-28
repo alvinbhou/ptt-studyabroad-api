@@ -34,7 +34,7 @@ class TWBackground(Background):
         self.mid2name = self.majors.to_dict()['major_cname']
         self.cabbr2mid = {cabbr: mid for cabbr, mid in zip(self.majors['major_cabbr'], self.majors.index)}
         self.cname2mid = {cname: mid for cname, mid in zip(self.majors['major_cname'], self.majors.index)}
-        self.name2mid = {name: mid for name, mid in zip(self.majors['major_name'], self.majors.index)}
+        self.name2mid = {name.upper(): mid for name, mid in zip(self.majors['major_name'], self.majors.index)}
         self.mid2mtype = {mid: mtype for mtype, mid in zip(self.majors['major_type'], self.majors.index)}
 
         # Background keywords
@@ -141,6 +141,7 @@ class TWBackground(Background):
         # Search after the start_idx (e.g. After university or background)
         sentence = sentence[start_idx:]
         sentence = re.sub(r'[.,:;/()]', ' ', sentence)
+        sentence = sentence.upper()
 
         # Check if major English name in row
         for name in self.name2mid:
