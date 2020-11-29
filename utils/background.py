@@ -163,7 +163,8 @@ class TWBackground(Background):
                 # mid in word (e.g. 'EE' in 'NTUEE')
                 rmid = re.findall(r'(' + '|'.join(self.mid2name.keys()) + ')(?!.)', word)
                 # Filter False positive ENT (Entomology) and word != 'BA' (Bachelor's of Art)
-                if rmid and (rmid[0] != 'ent' or re.match(r' ent', word)) and rmid[0] != 'BA':
+                if rmid and (rmid[0] != 'ENT' or re.match(r' ENT', word)) and rmid[0] != 'BA'\
+                        and (rmid[0] != 'ARCH' or 'RESEARCH' not in word.upper()):
                     return rmid[0].upper()
                 # cabbr in word (e.g. '電機' in '台大電機系')
                 rabbr = re.findall(r'(' + '|'.join(self.cabbr2mid.keys()) + ')', word, re.IGNORECASE)
@@ -235,7 +236,7 @@ class TWBackground(Background):
         # Return parsed GPA
         if len(candidates) > 0:
             return {'max_gpa': np.max(candidates), 'min_gpa': np.min(candidates),
-                    'mean_gpa': np.round(np.mean(candidates), 2), 'gpa_scale': gpa_scale}
+                    'mean_gpa': np.round(np.median(candidates), 2), 'gpa_scale': gpa_scale}
         else:
             return {'max_gpa': -1, 'min_gpa': -1, 'mean_gpa': -1, 'gpa_scale': -1}
 

@@ -26,12 +26,6 @@ class DataModel:
         self.cs_article_indices = []
         self.admission_article_indices = []
         self.ask_article_indices = []
-        # CS related keywords (CS/DS/ML/HCI/CV/NLP/Robotics/Stats)
-        self.cs_keywords = ['eecs', 'ece', 'cs', 'ee', 'ds', 'ml', 'stat', 'mscv', ' ce ', ' se ',
-                            'cmusv', 'cmu-sv', ' sv', 'hci', 'nlp', 'robotics', 'computer science']
-        # False positive keywords
-        self.fp_keywords = ['cheers', 'physics', 'ucs.', 'csu', 'facebook', 'indeed', 'fee', 'cec', 'economics', 'mlb', 'mli', 'emle', 'emlyon', 'need',
-                            'career', 'sva', 'milwaukee', 'leeds', 'records', 'sdsu', 'ds2019', 'ds2016', 'kids', 'state']
         self.tw_background = TWBackground()
         self.us_background = USBackground()
         self.programs = Programs()
@@ -85,27 +79,17 @@ class DataModel:
             if 'article_title' not in article or article['article_title'] is None:
                 continue
             article_title = article['article_title']
-            if re.match(r'.*(' + '|'.join(self.cs_keywords) + ').*', article_title, re.IGNORECASE):
-                # Ignore false positive, CEE and "* engineer" ones
-                if (re.match(r'.*(' + '|'.join(self.fp_keywords) + ').*', article_title,
-                             re.IGNORECASE) and self.get_occurrence_count(self.cs_keywords, article_title) < 2) or \
-                        re.match(r'.*( CEE|CEEB|civil and environmental engineering).*', article_title, re.IGNORECASE) or \
-                        re.match(r'^(?!.*(electrical engineer|computer engineer|software engineer)).*engineer.*$', article_title, re.IGNORECASE):
-                    continue
-                if ARTICLE_TYPE.ADMISSION.value in article_title and 'Re: ' not in article_title:
-                    self.admission_article_indices.append(idx)
-                    article['article_type'] = ARTICLE_TYPE.ADMISSION.name
-                elif ARTICLE_TYPE.ASK.value in article_title:
-                    self.ask_article_indices.append(idx)
-                    article['article_type'] = ARTICLE_TYPE.ASK.name
-                else:
-                    article['article_type'] = ARTICLE_TYPE.GENERAL_CS.name
-                self.cs_article_indices.append(idx)
+            if ARTICLE_TYPE.ADMISSION.value in article_title and 'Re: ' not in article_title:
+                self.admission_article_indices.append(idx)
+                article['article_type'] = ARTICLE_TYPE.ADMISSION.name
+            elif ARTICLE_TYPE.ASK.value in article_title:
+                self.ask_article_indices.append(idx)
+                article['article_type'] = ARTICLE_TYPE.ASK.name
             else:
                 article['article_type'] = ARTICLE_TYPE.ALL.name
 
     def parse_university_major_gpa(self):
-        indices = self.cs_article_indices
+        indices = self.admission_article_indices
         # Parse universities
         for article in self.all_articles[indices]:
             content = article['content']
@@ -127,7 +111,8 @@ class DataModel:
         pp.pprint(f'Parsed {uni_count} universities, {major_count} majors, and {gpa_count} GPAs')
 
         # Save the parsed results to the articles
-        for idx, article in enumerate(self.all_articles[self.cs_article_indices]):
+        # for idx, article in enumerate(self.all_articles[self.cs_article_indices]):
+        for idx, article in enumerate(self.all_articles[self.admission_article_indices]):
             if self.universities[idx] is not None:
                 d = {}
                 d.update(self.universities[idx])
@@ -196,7 +181,7 @@ class DataModel:
         additional_info = ['major_info', 'gpa_info', 'admission_info', 'university_info']
 
         # Gather column names for general header
-        general_keys = [k for k in self.all_articles[self.cs_article_indices][-1].keys() if k not in additional_info]
+        general_keys = [k for k in self.all_articles[self.admission_article_indices][-1].keys() if k not in additional_info]
         university_info_keys = [self.tw_background.universities.index.name] + \
             [k for k in self.tw_background.universities.columns.tolist() if k != 'ip']
         major_info_keys = [self.tw_background.majors.index.name] + self.tw_background.majors.columns.tolist()
@@ -208,11 +193,11 @@ class DataModel:
         general_header.extend(gpa_keys)
         # print(general_header)
 
-        with open(os.path.join(OUTPUT_DIR, 'cs_articles.csv'), 'w', newline='', encoding='utf - 8') as csvfile:
+        with open(os.path.join(OUTPUT_DIR, 'admission_articles.csv'), 'w', newline='', encoding='utf - 8') as csvfile:
             writer = csv.writer(csvfile, delimiter='|')
             writer.writerow(general_header)
 
-            for article in self.all_articles[self.cs_article_indices]:
+            for article in self.all_articles[self.admission_article_indices]:
                 assert 'error' not in article, article
                 row = []
                 # General stuff

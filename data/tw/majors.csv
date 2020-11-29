@@ -11,11 +11,38 @@ GICE,電信工程學研究所,Communication Engineering,電信,EE
 GIEE,電子工程學研究所,Electronics Engineering,電子,EE
 EEE,電子工程學研究所,Electronic Engineering,電子,EE
 IM,資訊管理學系,Information Management,資管,IM
-MIS,資訊管理學系,Information Management,資管,IM
+MIS,資訊管理學系,Management Information System,資管,IM
 OE,光電工程學研究所,Photonics and Optoelectronics,光電,EE
 STAT,統計系,Statistics,統計,STAT
 MATH,數學系,Mathematics,數學,MATH
 PHYS,物理學系,Physics,物理,PHYS
+GMBA,管理學院企業管理碩士專班,Global MBA,GMBA,GMBA
+MBA,商學研究所,Master of Business Administration,商研,MBA
+MSA,量測系統分析,Master of Science in Analytics,量測系統分析,MSA
+MSBA,商業分析所,Master of Science in Business Analytics,商業分析,MSBA
+JD,法律博士,JD,法律博士,LAW
+LLM,法學碩士,LLM,法學碩士,LAW
+CHEME,化學工程學系,Chemical Engineering,化工,CHEME
+CHEM,化學系,Chemistry,化學,CHEM
+CIE,土木工程學系,Civil Engineering,土木,CIE
+ME,機械工程學系,Mechanical Engineering,機械,ME
+ESOE,工程科學及海洋工程學系,Engineering Science and Ocean Engineering,工海,ESOE
+MSE,材料科學與工程學系,Materials Science and Engineering,材料,MSE
+BME,生物產業機電工程學系,Bio-industrial Mechatronics Engineering,生機,BME
+BIOE,生物工程,Bioengineering,生物工程,BIOE
+LAW,法律學系,Law,法律系,LAW
+SCM,供應鏈管理,Supply Chain Management,供應鏈,SCM
+LAWILS,科際整合法律學研究所,Interdisciplinary Legal Studies,科法所,LAW
+MPH,公共衛生碩士學位學程,Master of Public Health Degree Program,公衛所,MPH
+HPM,健康政策與管理研究所,Health Policy and Management,健管所,HPM
+EPM,流行病學與預防醫學研究所,Epidemiology and Preventive Medicine,流病所,EPM
+BEBI,生醫電子與資訊學研究所,Biomedical Electronics and Bioinformatics,生醫電資所,BEBI
+LS,生命科學系,Life Science,生科,LS
+BST,生化科技學系,Biochemical Science and Technology,生化,BST
+MARKETING,行銷,Marketing,行銷,MARKETING
+ARCH,建築,Architecture,建築,ARCH
+MSF,金融學碩士,Master of Science in Finance,金融碩,MSF
+MMS,管理學碩士,Master of Management Studies,管理學碩士,MMS
 CHIN,中國文學系,Chinese Literature,中文,CHIN
 FL,外國語文學系,Foreign Languages and Literatures,外文,FL
 HIST,歷史學系,History,歷史,HIST
@@ -28,7 +55,6 @@ ARHY,藝術史研究所,Art History,藝術,ARHY
 LING,語言學研究所,Linguistics,語言,LING
 MUSIC,音樂學研究所,Musicology,音樂,MUSIC
 TWLIT,臺灣文學研究所,Taiwan Literature,臺文,TWLIT
-CHEM,化學系,Chemistry,化學,CHEM
 GEO,地質科學系,Geosciences,地質,GEO
 PSY,心理學系,Psychology,心理,PSY
 GEOG,地理環境資源學系,Geography,地理,GEOG
@@ -66,11 +92,6 @@ FORMED,法醫學研究所,Forensic Medicine,法醫所,FORMED
 ONCO,腫瘤醫學研究所,Oncology,腫瘤所,ONCO
 GENOM,臨床基因醫學研究所,Clinical Genomics,臨床基因所,GENOM
 PTMP,轉譯醫學博士學位學程,Doctor of Philosophy of Translational Medicine Degree Program,轉譯所,PTMP
-CIE,土木工程學系,Civil Engineering,土木,CIE
-ME,機械工程學系,Mechanical Engineering,機械,ME
-CHEME,化學工程學系,Chemical Engineering,化工,CHEME
-ESOE,工程科學及海洋工程學系,Engineering Science and Ocean Engineering,工海,ESOE
-MSE,材料科學與工程學系,Materials Science and Engineering,材料,MSE
 ENVE,環境工程學研究所,Environmental Engineering,環工所,ENVE
 AM,應用力學研究所,Applied Mechanics,應力所,AM
 BP,建築與城鄉研究所,Building and Planning,城鄉所,BP
@@ -86,9 +107,8 @@ AGEC,農業經濟學系,Agricultural Economics,農經,AGEC
 HORT,園藝學系,Horticultural Science,園藝,HORT
 VM,獸醫學系,Veterinary Medicine,獸醫,VM
 BICD,生物產業傳播暨發展學系,Bio-Industry Communication and Development,生傳,BICD
-BME,生物產業機電工程學系,Bio-industrial Mechatronics Engineering,生機,BME
-ENT,昆蟲學系,Entomology,昆蟲,ENT
 PPM,植物病理與微生物學系,Plant Pathology and Microbiology,植微,PPM
+PLANT,植物系,Plant,植物,PLANT
 FOOD,食品科技研究所,Food Science and Technology,食科所,FOOD
 BIOT,生物科技研究所,Biotechnology,生科所,BIOT
 VCS,臨床動物醫學研究所,Veterinary Clinical Sciences,臨床動物,VCS
@@ -101,14 +121,6 @@ IB,國際企業學系,International Business,國企,IB
 PH,公共衛生學系,Public Health,公衛,PH
 OMIH,職業醫學與工業衛生研究所,Occupational Medicine and Industrial Hygiene,職衛所,OMIH
 EH,環境衛生研究所,Environmental Health,環衛所,EH
-MPH,公共衛生碩士學位學程,Master of Public Health Degree Program,公衛所,MPH
-HPM,健康政策與管理研究所,Health Policy and Management,健管所,HPM
-EPM,流行病學與預防醫學研究所,Epidemiology and Preventive Medicine,流病所,EPM
-BEBI,生醫電子與資訊學研究所,Biomedical Electronics and Bioinformatics,生醫電資所,BEBI
-LAW,法律學系,Law,法律系,LAW
-LAWILS,科際整合法律學研究所,Interdisciplinary Legal Studies,科法所,LAWILS
-LS,生命科學系,Life Science,生科,LS
-BST,生化科技學系,Biochemical Science and Technology,生化,BST
 ZOOL,動物學研究所,Zoology,動物所,ZOOL
 PLBIO,植物科學研究所,Plant Biology,植科所,PLBIO
 MCB,分子與細胞生物學研究所,Molecular and Cellular Biology,分細所,MCB
@@ -123,6 +135,4 @@ EMBAF,管理學院財務金融組,The Executive MBA Program in Finance,EMBAF,EMB
 EMBAG,管理學院國際企業管理組,The Executive MBA Program in International Business Management,EMBAG,EMBAG
 EMBAI,管理學院資訊管理組,The Executive MBA Program in Information Management,EMBAI,EMBAI
 EMBAB,管理學院商學組,The Executive MBA Program in Business Administration,EMBAB,EMBAB
-GMBA,管理學院企業管理碩士專班,Global MBA,GMBA,GMBA
-MBA,商學研究所,Master of Business Administration,商研,MBA
-
+ENT,昆蟲學系,Entomology,昆蟲,ENT

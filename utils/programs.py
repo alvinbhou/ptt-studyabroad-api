@@ -1,5 +1,6 @@
 import os
 import json
+import pandas as pd
 from config.settings import DATA_DIR
 
 
@@ -8,16 +9,25 @@ class Programs:
         # Load Programs
         with open(os.path.join(DATA_DIR, 'us/programs.json'), 'r') as f:
             self.programs_dict = json.load(f)
-            self.levels = self.programs_dict['levels']
-            self.programs = self.programs_dict['programs']
-            self.masters = self.programs_dict['masters']
+        self.levels = self.programs_dict['levels']
+        self.programs = self.programs_dict['programs']
+        self.masters = self.programs_dict['masters']
 
-            # Build up dict
-            self.program2type = {}
-            for t in self.programs_dict['type']:
-                for p in self.programs_dict['type'][t]:
-                    self.program2type[p] = t
-            assert len(set(self.programs) - set(self.program2type.keys())) == 0
+        # Build up dict
+        self.program2type = {}
+        for t in self.programs_dict['type']:
+            for p in self.programs_dict['type'][t]:
+                self.program2type[p] = t
+        assert len(set(self.programs) - set(self.program2type.keys())) == 0
+
+        self.majors = pd.read_csv(os.path.join(DATA_DIR, 'tw/majors.csv'), sep=',', index_col='major_id', na_values=None)
+        self.majors['major_name_upper'] = self.majors['major_name'].str.upper()
+
+        for _, row in self.majors.iterrows():
+            if row['major_name'] not in self.program2type:
+                self.program2type[row['major_name']] = row['major_type']
+            if row.name not in self.program2type:
+                self.program2type[row.name] = row['major_type']
 
     def search_program(self, row, aid=None):
         # Append prefix and suffix for better matching
@@ -25,6 +35,7 @@ class Programs:
         program_level = None
         program_name = None
 
+        # 1) Search for all CS programs in the 'programs.json'
         # Apply Phd but got MS offer
         if ' MS ' in row and ' PhD ' in row:
             program_level = 'MS'
@@ -38,6 +49,23 @@ class Programs:
             if ' ' + program + ' ' in row:
                 program_name = program
                 break
+        # 2) If we still can't find the program name, search for
+        # non-CS program names
+        row_upper = row.upper()
+        if not program_name:
+            for _, mrow in self.majors.iterrows():
+                if ' ' + mrow['major_name_upper'] + ' ' in row_upper:
+                    program_name = mrow['major_name']
+                    break
+        # 3) Still no luck, find from the major ids
+        if not program_name:
+            for _, mrow in self.majors.iterrows():
+                if ' ' + mrow.name + ' ' in row_upper:
+                    # Texas A&M corner case
+                    if mrow.name == 'AM' and 'TEXAS AM' in row_upper:
+                        continue
+                    program_name = mrow['major_name']
+                    break
 
         if program_level is not None:
             row = row.replace(' ' + program_level + ' ', ' ')
@@ -80,7 +108,7 @@ class Programs:
             program_name = 'MEng'
         elif program_type == 'SE':
             program_name = program_name.replace(' ', '')
-            program_name = 'MSSE' if program_name in ('MSE', 'SiliconValley', 'SV-SE', 'SE', 'SoftwareEngineering') else program_name
+            program_name = 'MSSE' if program_name in ('SiliconValley', 'SV-SE', 'SE', 'SoftwareEngineering') else program_name
         elif program_type == 'IS':
             program_name = program_name.replace(' ', '')
             program_name = 'MSIS' if program_name in ('MasterofScienceinInformation',

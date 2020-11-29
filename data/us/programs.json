@@ -8,10 +8,10 @@
         "HCI", "MHCI", "MS in HCI", "HCDE", "CGT", "UX", "Human-Centered Design and Engineering", "Human-Computer Interaction", "MDE",
         "MSCV", "CV", "Computer Vision", "MSDS", "MS DS",
         "MSML", "MCDS", "MSR", "MITS", "MET", "ETC", "MSIT", "MSIT-SE", "MSIT-ESE", "METALS",
-        "MIIS", "MSIN", "MSIT-MOB", "MSIT-Mob", "LTI", "RI", "MS in Machine Learning",
+        "MIIS", "MSIN", "INI", "MSIT-MOB", "MSIT-Mob", "LTI", "RI", "MS in Machine Learning",
         "CSE", "MSCS", "MS CS", "MCS", "Master of Science in Computer Science", "Master of Computer Science", "Computer Science", "MS in CS", "Professional CS",
         "MEng", "M.Eng", "MEng.", "M.Eng.", "MENG", "Master of Engineering", "EE CS", "EECS", "Electrical Computer Engineering", "Electrical Engineering", "CS",
-        "Robotics", "MRSD", "Statistics", "Information System", "Information Management",
+        "Robotics", "MRSD", "Statistics", "Information System", "Information Management", "MIS",
         "MScAC", "PMP", "CM", "Connective Media"
     ],
 
@@ -22,7 +22,7 @@
         "MSIS", "MS IS", "MSIM", "MS IM", "MISM", "MSI", "Master of Science in Information", "MDE",
         "HCI", "MHCI", "MS in HCI", "HCDE", "Human-Centered Design and Engineering",
         "MSML", "MCDS", "MSR", "MSCV", "MITS", "MET", "ETC", "MSIT", "MSIT-SE", "MSIT-ESE",
-        "MIIS", "MSIN", "MSIS", "MSIT-MOB", "MSIT-Mob", "MS in Machine Learning",
+        "MIIS", "MSIN", "INI", "MSIS", "MSIT-MOB", "MSIT-Mob", "MS in Machine Learning",
         "MRSD", "Information System", "Information Management",
         "MScAC", "PMP", "CM", "Connective Media"
     ],
@@ -30,7 +30,7 @@
     "type": {
         "CS": ["CSE", "MSCS", "MS CS", "MCS", "Master of Science in Computer Science", "Master of Computer Science", "Computer Science",
             "MS in CS", "Professional CS", "EE CS", "EECS", "CS", "MSML", "MCDS", "MSR", "MSCV", "MITS", "MET", "ETC", "MSIT", "MRSD",
-            "MIIS", "MSIN", "MSIS", "MSIT-MOB", "MSIT-Mob", "MS in Machine Learning", "Robotics", "Statistics", "LTI", "RI", "METALS",
+            "MIIS", "MSIN", "INI", "MSIS", "MSIT-MOB", "MSIT-Mob", "MS in Machine Learning", "Robotics", "Statistics", "LTI", "RI", "METALS",
             "MScAC", "PMP", "CM", "Connective Media", "CV", "Computer Vision", "MSDS", "MS DS"
         ],
         "EE": [
@@ -43,13 +43,11 @@
             "MEng", "M.Eng", "MEng.", "M.Eng.", "MENG", "Master of Engineering"
         ],
         "IS": [
-            "MSIS", "MS IS", "MSIM", "MS IM", "MISM", "MIMS", "MSI", "Master of Science in Information", "Information System", "Information Management"
+            "MSIS", "MS IS", "MSIM", "MS IM", "MISM", "MIMS", "MSI", "Master of Science in Information", "Information System", "Information Management", "MIS"
         ],
         "HCI": [
             "HCI", "MHCI", "MS in HCI", "HCDE", "CGT", "UX", "Human-Centered Design and Engineering", "Human-Computer Interaction", "MDE"
         ]
-
-
     }
 
 }

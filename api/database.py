@@ -128,7 +128,7 @@ def create_tables_and_dump_data():
         Base.metadata.create_all(bind=engine)
 
         # Copy CSV files
-        csv_paths = ['./output/cs_articles.csv', './output/admission_universities.csv', './output/admission_uni_and_programs.csv']
+        csv_paths = ['./output/admission_articles.csv', './output/admission_universities.csv', './output/admission_uni_and_programs.csv']
         table_classes = [ARTICLES, ADMISSION_UNIVERSITIES, ADMISSION_UNI_PROGRAMS]
         # col_names = [article_header, ['id', 'article_id', 'university'], ['id',
         # 'article_id', 'university', 'program_level', 'program', 'program_type']]
@@ -181,7 +181,7 @@ QUERY_SIMILAR_BACKGROUND_PROGRAM_STR = """
             ) as sub
             GROUP BY article_id) as x ON x.article_id = articles.article_id
             WHERE (length(:program_types) = 2 OR program_types && ARRAY[:program_type_arr]::varchar[])
-        ORDER BY score DESC, gpa_diff ASC, date DESC;
+        ORDER BY score DESC, date DESC, gpa_diff ASC;
     """
 
 QUERY_TARGET_SCHOOL_STR = """
