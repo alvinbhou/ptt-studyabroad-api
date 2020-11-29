@@ -25,7 +25,7 @@ class Candidate(BaseModel):
 
     @validator('gpa')
     def validate_gpa(cls, gpa):
-        if gpa < 0 or gpa > 4.3:
+        if (gpa < 0 or gpa > 4.3) and gpa != -100:
             raise ValueError('Invalid GPA, must in range [0, 4.3]')
         return gpa
 

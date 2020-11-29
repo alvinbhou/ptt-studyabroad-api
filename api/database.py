@@ -163,7 +163,7 @@ QUERY_SIMILAR_BACKGROUND_PROGRAM_STR = """
                     5 * ((mean_gpa BETWEEN :gpa - 0.3 AND :gpa - 0.21) OR (mean_gpa BETWEEN :gpa + 0.21 AND :gpa + 0.3))::int +
                     2 * ((mean_gpa BETWEEN :gpa - 0.5 AND :gpa - 0.31) OR (mean_gpa BETWEEN :gpa + 0.31 AND :gpa + 0.5))::int +
                     4 * (min_gpa <= 3.01 AND (min_gpa BETWEEN :gpa -0.25 AND :gpa + 0.25) )::int +
-                    4 * (min_gpa <= 3.01 AND :gpa <= 3.01 AND (min_gpa BETWEEN 0 AND 3.01) )::int +
+                    3.7 * (min_gpa <= 3.01 AND :gpa <= 3.01 AND (min_gpa BETWEEN 0 AND 3.01) )::int +
                     -0.2 * (mean_gpa = -1)::int +
                     8 * (length(:uni_id) > 0 AND uni_id = :uni_id)::int +
                     20 * (length(:uni_id) > 0 AND uni_id = :uni_id AND NOT uni_id ~ '(NTU|NCTU|NTHU)')::int +
