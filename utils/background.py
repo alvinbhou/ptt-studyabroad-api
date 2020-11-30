@@ -235,8 +235,9 @@ class TWBackground(Background):
 
         # Return parsed GPA
         if len(candidates) > 0:
+            candidates.sort()
             return {'max_gpa': np.max(candidates), 'min_gpa': np.min(candidates),
-                    'mean_gpa': np.round(np.median(candidates), 2), 'gpa_scale': gpa_scale}
+                    'mean_gpa': np.round(candidates[len(candidates) // 2], 2), 'gpa_scale': gpa_scale}
         else:
             return {'max_gpa': -1, 'min_gpa': -1, 'mean_gpa': -1, 'gpa_scale': -1}
 
