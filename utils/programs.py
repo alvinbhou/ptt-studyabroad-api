@@ -54,9 +54,11 @@ class Programs:
         row_upper = row.upper()
         if not program_name:
             for _, mrow in self.majors.iterrows():
-                if ' ' + mrow['major_name_upper'] + ' ' in row_upper:
+                if ' ' + mrow['major_name_upper'] + ' ' in row_upper or \
+                        ' ' + mrow['major_cabbr'] + ' ' in row_upper:
                     program_name = mrow['major_name']
                     break
+
         # 3) Still no luck, find from the major ids
         if not program_name:
             for _, mrow in self.majors.iterrows():

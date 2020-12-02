@@ -296,11 +296,11 @@ class USBackground(Background):
             if re.search(uname, ad_row, flags=re.IGNORECASE):
                 return uname
         ad_row = ' ' + ad_row + ' '
+        ad_row_upper = ad_row.upper()
         for uid in self.us_universities['top_100_uid']:
-            if ' ' + uid + ' ' in ad_row:
+            if ' ' + uid + ' ' in ad_row_upper:
                 return self.us_universities['top_100_uid'][uid]
         ad_row = ad_row.strip()
-        # ^([a-zA-Z\s]* )?apple( [a-zA-Z\s]*)?$
 
         for uname in self.us_universities['other_uni_names']:
             if re.search(uname, ad_row, flags=re.IGNORECASE):

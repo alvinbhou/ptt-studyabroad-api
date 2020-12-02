@@ -40,8 +40,8 @@ EPM,流行病學與預防醫學研究所,Epidemiology and Preventive Medicine,�
 LS,生命科學系,Life Science,生科,LS
 ECON,經濟學系,Economics,經濟,ECON
 BST,生化科技學系,Biochemical Science and Technology,生化,BIO
-BA,工商管理學系,Business Administration,工管,BA
-BM,企業管理學系,Business Management,企管,BA
+BA,工商管理學系,Business Administration,工管,MBA
+BM,企業管理學系,Business Management,企管,MBA
 ACC,會計學系,Accounting,會計,FIN
 FIN,財務金融學系,Finance,財金,FIN
 BANKING,金融學系,Money and Banking,金融,FIN
@@ -138,4 +138,6 @@ EMBAF,管理學院財務金融組,The Executive MBA Program in Finance,EMBAF,MBA
 EMBAG,管理學院國際企業管理組,The Executive MBA Program in International Business Management,EMBAG,MBA
 EMBAI,管理學院資訊管理組,The Executive MBA Program in Information Management,EMBAI,MBA
 EMBAB,管理學院商學組,The Executive MBA Program in Business Administration,EMBAB,MBA
+MANAGEMENT,管理,Management,管理,MBA
+BUSINESS,商學院,Business,商學院,MBA
 ENT,昆蟲學系,Entomology,昆蟲,ENT
