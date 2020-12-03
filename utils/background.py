@@ -298,7 +298,8 @@ class USBackground(Background):
         ad_row = ' ' + ad_row + ' '
         ad_row_upper = ad_row.upper()
         for uid in self.us_universities['top_100_uid']:
-            if ' ' + uid + ' ' in ad_row_upper:
+            uid_token = ' ' + uid + ' '
+            if uid_token in (ad_row_upper, ad_row):
                 return self.us_universities['top_100_uid'][uid]
         ad_row = ad_row.strip()
 
