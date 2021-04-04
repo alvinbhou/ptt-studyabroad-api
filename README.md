@@ -1,9 +1,9 @@
 # PTT StudyAbroad API
 
-<a href="https://cryolite.me/studyabroad/"><img src ="https://circleci.com/gh/CryoliteZ/ptt-studyabroad-api.svg?style=svg"/> </a>
+<a href="https://cryolite.me/studyabroad/"><img src ="https://circleci.com/gh/alvinbhou/ptt-studyabroad-api.svg?style=svg"/> </a>
 
 <p align="center">
-  <a href="https://cryolite.me/studyabroad/"><img src="https://i.imgur.com/5UxAABV.png" alt="ptt-studyabroad-api"/></a>
+  <a href="https://alvinhou.com/studyabroad/"><img src="https://i.imgur.com/5UxAABV.png" alt="ptt-studyabroad-api"/></a>
 </p>
 
 <p align="center">
@@ -18,15 +18,16 @@
 
 PTT StudyAbroad API provides a way to search for CS related articles with customized results that matches your background
 
+### **Website**: https://alvinhou.com/studyabroad/
+
+**Documentation**: https://ptt-studyabroad-api.herokuapp.com/docs  
 
 <p align="center">
-  <a href="https://cryolite.me/studyabroad/"><img src="https://i.imgur.com/pN9vsDB.png" alt="ptt-studyabroad-api"/></a>
+  <a href="https://alvinhou.com/studyabroad/"><img src="https://i.imgur.com/pN9vsDB.png" alt="ptt-studyabroad-api"/></a>
 </p>
 
 
-### **Website**: https://cryolite.me/studyabroad/
 
-**Documentation**: https://ptt-studyabroad-api.herokuapp.com/docs  
 
 ## Getting Started
 
