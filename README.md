@@ -170,7 +170,7 @@ We use the `heroku-postgresql` addon as our database
 heroku apps:create ptt-studyabroad-api
 heroku addons:create heroku-postgresql:hobby-dev
 heroku stack:set container
-git push heroku master 
+git push heroku master:master 
 ```
 
 ## Built With
@@ -185,8 +185,7 @@ git push heroku master
 *Note: The API is still under development, so some information parsing may be incorrect. If the quarantine ends I maybe won't have that much time to work on these TODOs...
 
 * Refactor code (Too much special cases to deal with, the code is kinda ugly...)
-* Deploy the API to AWS Fargate
-* Add background workers that parse new aritcles from PTT
+* Add background workers that parse new articles from PTT
 * Exclude some large files from GitHub
 * Improve keyword extraction
 * Add other APIs (such as college decision articles)
@@ -201,4 +200,4 @@ This project is licensed under the GPLv3 License - see the [LICENSE.md](LICENSE.
 * [majors.csv](data/tw/majors.csv) is parsed from http://www.aca.ntu.edu.tw/curri/curs_deptabb.asp
 * [tw_universities.csv](data/tw/tw_universities.csv) and [us_universities_uids.csv](data/us/us_universities_uids.csv) are parsed from Wiki
 * [world_universities_and_domains.json](data/us/world_universities_and_domains.json) is downloaded from [Hipo/university-domains-ist](https://github.com/Hipo/university-domains-list)
-* All articles belong to PTT/StudyAborad
+* All articles belong to PTT/StudyAbroad
