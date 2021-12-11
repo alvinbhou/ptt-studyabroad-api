@@ -3,7 +3,7 @@ import json
 with open('../data/studyabroad.json') as f:
     data = json.load(f)
 
-with open('./Studyabroad-1656-1672.json') as f:
+with open('./Studyabroad-1673-1706.json') as f:
     data2 = json.load(f)
 
 for a in data2['articles']:
