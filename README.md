@@ -1,5 +1,9 @@
 # PTT StudyAbroad API
 
+### **Website**: https://alvinhou.com/studyabroad/
+
+**Documentation**: https://ptt-studyabroad-api.herokuapp.com/docs  
+
 <a href="https://cryolite.me/studyabroad/"><img src ="https://circleci.com/gh/alvinbhou/ptt-studyabroad-api.svg?style=svg"/> </a>
 
 <p align="center">
@@ -12,15 +16,11 @@
 
 
 
-> Having a hard time searching for information about studying CS abroad? 
-
+> Having a hard time searching for information about studying abroad? 
+> 
 > Got flamed for not doing enough research before posting on PTT? 
 
-PTT StudyAbroad API provides a way to search for CS related articles with customized results that matches your background
-
-### **Website**: https://alvinhou.com/studyabroad/
-
-**Documentation**: https://ptt-studyabroad-api.herokuapp.com/docs  
+PTT StudyAbroad API provides a way to search for articles with personalized results that matches your background
 
 <p align="center">
   <a href="https://alvinhou.com/studyabroad/"><img src="https://i.imgur.com/pN9vsDB.png" alt="ptt-studyabroad-api"/></a>
